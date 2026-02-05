@@ -1,36 +1,152 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎮 PokéDex - Aplicación Web con Next.js
 
-## Getting Started
+Aplicación web interactiva que consume la **PokéAPI** para mostrar información detallada de Pokémon, incluyendo sus sprites normales y shiny, estadísticas, habilidades y cadena evolutiva.
 
-First, run the development server:
+## 📋 Descripción del Proyecto
 
+Este proyecto fue desarrollado como parte de la materia de **Programación Web 2**, utilizando tecnologías modernas de desarrollo web como Next.js, React y Tailwind CSS. La aplicación permite explorar los primeros 30 Pokémon de la primera generación de forma dinámica y responsiva.
+
+## ✨ Características Principales
+
+- 🔍 **Menú horizontal con scroll** - Navegación fluida entre 30 Pokémon
+- 🖼️ **Sprites Normal y Shiny** - Visualización lado a lado de ambas versiones
+- 📊 **Estadísticas completas** - HP, Attack, Defense, Special Attack, Special Defense y Speed con barras de progreso
+- ⚡ **Habilidades** - Lista de todas las habilidades del Pokémon seleccionado
+- 🔄 **Cadena evolutiva** - Muestra la línea evolutiva completa del Pokémon
+- 📱 **Diseño responsivo** - Adaptable a diferentes tamaños de pantalla
+- 🎨 **Interfaz moderna** - Diseño con fondo azul marino y elementos visuales atractivos
+
+## 🛠️ Tecnologías Utilizadas
+
+- **Next.js 16.1.6** - Framework de React para aplicaciones web
+- **React 19** - Biblioteca de JavaScript para interfaces de usuario
+- **TypeScript** - Superset de JavaScript con tipado estático
+- **Tailwind CSS** - Framework de CSS utilitario para estilos
+- **PokéAPI** - API RESTful para obtener datos de Pokémon
+
+## 📦 Instalación
+
+### Prerrequisitos
+
+- Node.js (versión 18 o superior)
+- npm o yarn
+
+### Pasos de instalación
+
+1. Clonar el repositorio:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/TU-USUARIO/pokedex-nextjs.git
+cd pokedex-nextjs
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Instalar dependencias:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Ejecutar el servidor de desarrollo:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Abrir el navegador en:
+```
+http://localhost:3000
+```
 
-## Learn More
+## 🚀 Scripts Disponibles
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run dev      # Inicia el servidor de desarrollo
+npm run build    # Construye la aplicación para producción
+npm start        # Inicia el servidor de producción
+npm run lint     # Ejecuta el linter para revisar el código
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📁 Estructura del Proyecto
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+pokedex-nextjs/
+├── app/
+│   ├── page.tsx          # Componente principal de la aplicación
+│   ├── layout.tsx        # Layout principal con metadata
+│   └── globals.css       # Estilos globales y Tailwind
+├── public/               # Archivos estáticos
+├── node_modules/         # Dependencias del proyecto
+├── next.config.ts        # Configuración de Next.js
+├── tailwind.config.ts    # Configuración de Tailwind CSS
+├── tsconfig.json         # Configuración de TypeScript
+├── package.json          # Dependencias y scripts
+└── README.md            # Documentación del proyecto
+```
 
-## Deploy on Vercel
+## 🎯 Funcionalidades Implementadas
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 1. Consumo de API
+- Fetching de datos de la PokéAPI
+- Manejo de promesas con `async/await`
+- Gestión de estados con React Hooks (`useState`, `useEffect`)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 2. Rutas Dinámicas
+- Navegación entre diferentes Pokémon sin recargar la página
+- Actualización dinámica del contenido basado en la selección del usuario
+
+### 3. Interfaz Responsiva
+- Diseño adaptable usando Tailwind CSS
+- Grid system para organizar la información
+- Efectos hover y transiciones suaves
+
+### 4. Manejo de Datos
+- Tipado estricto con TypeScript
+- Interfaces para los datos de la API
+- Procesamiento de cadenas evolutivas
+
+## 🌐 API Utilizada
+
+**PokéAPI** - https://pokeapi.co/
+
+Endpoints principales:
+- `https://pokeapi.co/api/v2/pokemon/{id}` - Datos del Pokémon
+- `https://pokeapi.co/api/v2/pokemon-species/{id}` - Datos de especie
+- `https://pokeapi.co/api/v2/evolution-chain/{id}` - Cadena evolutiva
+
+## 🎨 Paleta de Colores
+
+- **Azul Marino (Fondo)**: `#1e3a8a` (bg-blue-900)
+- **Azul Oscuro (Tarjetas)**: `#1e40af` (bg-blue-800)
+- **Amarillo (Acentos)**: `#eab308` (bg-yellow-500)
+- **Blanco (Texto)**: `#ffffff` (text-white)
+
+## 📱 Responsividad
+
+La aplicación está optimizada para:
+- 📱 Móviles (320px - 768px)
+- 💻 Tablets (768px - 1024px)
+- 🖥️ Desktop (1024px en adelante)
+
+## 🚀 Despliegue en Vercel
+
+1. Sube tu código a GitHub
+2. Conecta tu repositorio en [vercel.com](https://vercel.com)
+3. Vercel detectará automáticamente Next.js y desplegará tu aplicación
+4. Obtén tu URL de producción
+
+## 👨‍💻 Autor
+
+**Moises Emmanuel Ramirez Guzman**
+
+Proyecto realizado para la materia de Programación Web 2
+
+## 📄 Licencia
+
+Este proyecto es de código abierto y está disponible para fines educativos.
+
+## 🙏 Agradecimientos
+
+- PokéAPI por proporcionar los datos de Pokémon
+- Next.js y el equipo de Vercel por el excelente framework
+- Tailwind CSS por facilitar el diseño responsivo
+
+---
+
+⭐ Si te gustó este proyecto, no olvides darle una estrella en GitHub!
